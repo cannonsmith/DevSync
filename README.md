@@ -4,13 +4,13 @@ This code is intended to solve a very specific problem. I have multiple 4D proje
 To accomplish this when working in binary mode, I would launch a second copy of 4D and use it to open each database in turn, copying the changed folder by dragging and dropping between databases. This process is no longer possible in project mode. In theory we should now be able to do this by copying files directly on disk, but the folder structure in the 4D Explorer is not mirrored on disk thus making it difficult to ensure all files are copied (or deleted) correctly.
 
 The DevSync code solves this by automatically copying the following items of a folder from the currently running project to other projects:
-	- Child folders (all the way down the chain)
-	- Methods
-	- Classes
-	- Forms
-	- Method documentation
-	- Class documentation
-	- Form documentation
+- Child folders (all the way down the chain)
+- Methods
+- Classes
+- Forms
+- Method documentation
+- Class documentation
+- Form documentation
 
 Importantly, it also updates the folders.json file in each target project so that the folder structure remains correct.
 
