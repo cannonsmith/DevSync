@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><preferences stamp="2">
+	<com.4d>
+		<interface>
+			<developper display_toolbar="false"/>
+			<user print_progress="false" splash_screen="false"/>
+			<shortcuts>
+				<add_subform alt="false" command="false" ctrl="false" key_code="0" shift="false"/>
+				<cancel_input_form alt="false" command="false" ctrl="false" key_code="0" shift="false"/>
+				<accept_input_form alt="false" command="false" ctrl="false" key_code="0" shift="false"/>
+			</shortcuts>
+		</interface>
+		<php ip_address="127.0.0.1"/>
+		<server>
+			<network>
+				<options publication_name="DevSync"/>
+			</network>
+		</server>
+		<database>
+			<cache adaptative="false" flush_buffer_delay="20s"/>
+		</database>
+		<compiler>
+			<options compilation_path="3"/>
+			<typage default_for_button="2"/>
+		</compiler>
+	</com.4d>
+</preferences>

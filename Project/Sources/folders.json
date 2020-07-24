@@ -1,0 +1,25 @@
+﻿{
+	"DevSync": {
+		"methods": [
+			"Compiler_DevSync",
+			"DevSync__README",
+			"DevSync_CanSync",
+			"DevSync_FolderDescendents",
+			"DevSync_InitModel",
+			"DevSync_LoadProjectFoldersUI",
+			"DevSync_LoadProjectsUI",
+			"DevSync_LoadState",
+			"DevSync_LoadSyncFoldersUI",
+			"DevSync_RemoveChildFolder",
+			"DevSync_SaveState",
+			"DevSync_ShowWindow",
+			"DevSync_Sync",
+			"DevSync_SyncFolder",
+			"DevSync_ThisProject"
+		],
+		"forms": [
+			"DevSync"
+		]
+	},
+	"trash": {}
+}
