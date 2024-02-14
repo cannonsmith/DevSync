@@ -1,13 +1,13 @@
-//%attributes = {}
+//%attributes = {"folder":"DevSync","lang":"en"}
 /* Returns the object in DevSyncObject.projectPaths that represents the currently
 running project.
 */
 
-C_OBJECT:C1216($0;$oThisProject)
+C_OBJECT($0; $oThisProject)
 
-C_COLLECTION:C1488($cProjects)
+C_COLLECTION($cProjects)
 
-$cProjects:=Form:C1466.DevSyncObject.projectPaths.query("path = :1";Form:C1466.path.thisProject)
+$cProjects:=Form.DevSyncObject.projectPaths.query("path = :1"; Form.path.thisProject)
 If ($cProjects.length>0)
 	$oThisProject:=$cProjects[0]
 End if 

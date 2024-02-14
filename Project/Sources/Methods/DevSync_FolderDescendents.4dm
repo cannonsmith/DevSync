@@ -1,25 +1,25 @@
-//%attributes = {}
-  //Given the passed in folder, add all nested descendents to the passed in
-  //collection.
+//%attributes = {"folder":"DevSync","lang":"en"}
+//Given the passed in folder, add all nested descendents to the passed in
+//collection.
 
-C_TEXT:C284($1;$tFolderName)
-C_COLLECTION:C1488($2;$cDescendents)
+C_TEXT($1; $tFolderName)
+C_COLLECTION($2; $cDescendents)
 
 $tFolderName:=$1
 $cDescendents:=$2
 
-C_TEXT:C284($tChildFolderName)
-C_OBJECT:C1216($oFolder)
+C_TEXT($tChildFolderName)
+C_OBJECT($oFolder)
 
-$oFolder:=Form:C1466.ProjectFoldersObject[$tFolderName]
-If ($oFolder#Null:C1517)
+$oFolder:=Form.ProjectFoldersObject[$tFolderName]
+If ($oFolder#Null)
 	
-	If ($oFolder.groups#Null:C1517)
+	If ($oFolder.groups#Null)
 		
-		For each ($tChildFolderName;$oFolder.groups)
+		For each ($tChildFolderName; $oFolder.groups)
 			
 			$cDescendents.push($tChildFolderName)
-			DevSync_FolderDescendents ($tChildFolderName;$cDescendents)
+			DevSync_FolderDescendents($tChildFolderName; $cDescendents)
 			
 		End for each 
 		

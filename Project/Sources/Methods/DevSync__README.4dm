@@ -1,4 +1,4 @@
-//%attributes = {}
+//%attributes = {"folder":"DevSync","lang":"en"}
 /* Call DevSyn_ShowWindow to open this window. It was made to "sync" 4D Explorer folders from one project to another.
 Currently 4D's project mode doesn't allow a folder hierarchy of methods, forms, etc. in folders on disk. Instead,
 they keep a representation of folder hierarchy for the 4D Explorer in the folders.json file. It also isn't possible

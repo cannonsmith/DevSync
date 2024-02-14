@@ -1,15 +1,15 @@
-C_TEXT:C284($tContainsSearch)
+C_TEXT($tContainsSearch)
 
 Case of 
-	: (Form event code:C388=On After Edit:K2:43)
-		If (Get edited text:C655="")
+	: (Form event code=On After Edit)
+		If (Get edited text="")
 			
-			Form:C1466.UI.VisibleFolderList:=Form:C1466.UI.AllFolderList
+			Form.UI.VisibleFolderList:=Form.UI.AllFolderList
 			
 		Else 
 			
-			$tContainsSearch:="@"+Get edited text:C655+"@"
-			Form:C1466.UI.VisibleFolderList:=Form:C1466.UI.AllFolderList.query("name = :1";$tContainsSearch)
+			$tContainsSearch:="@"+Get edited text+"@"
+			Form.UI.VisibleFolderList:=Form.UI.AllFolderList.query("name = :1"; $tContainsSearch)
 			
 		End if 
 		

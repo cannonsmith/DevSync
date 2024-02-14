@@ -1,25 +1,25 @@
-//%attributes = {}
+//%attributes = {"folder":"DevSync","lang":"en"}
 /* Build the list of projects for the UI. This includes all the projects from the DevSync
 state object except the current project.
 */
 
-C_OBJECT:C1216($oProject;$oThisProject;$oUIProject)
-C_COLLECTION:C1488($cPath)
+C_OBJECT($oProject; $oThisProject; $oUIProject)
+C_COLLECTION($cPath)
 
-$oThisProject:=DevSync_ThisProject 
+$oThisProject:=DevSync_ThisProject
 
-Form:C1466.UI.Projects:=New collection:C1472
-For each ($oProject;Form:C1466.DevSyncObject.projectPaths)
-	If ($oProject.path#Form:C1466.path.thisProject)  //Don't add the current project
-		$oUIProject:=New object:C1471
+Form.UI.Projects:=New collection
+For each ($oProject; Form.DevSyncObject.projectPaths)
+	If ($oProject.path#Form.path.thisProject)  //Don't add the current project
+		$oUIProject:=New object
 		$oUIProject.path:=$oProject.path
 		If ($oThisProject.selectedProjects.indexOf($oProject.path)=-1)
-			$oUIProject.selected:=False:C215
+			$oUIProject.selected:=False
 		Else 
-			$oUIProject.selected:=True:C214
+			$oUIProject.selected:=True
 		End if 
-		$cPath:=Split string:C1554($oProject.path;Folder separator:K24:12)
+		$cPath:=Split string($oProject.path; Folder separator)
 		$oUIProject.label:=$cPath[$cPath.length-1]
-		Form:C1466.UI.Projects.push($oUIProject)
+		Form.UI.Projects.push($oUIProject)
 	End if 
 End for each 

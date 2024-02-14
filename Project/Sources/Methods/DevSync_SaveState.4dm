@@ -1,7 +1,7 @@
-//%attributes = {}
-  //This method saves the DevSync state back to disk.
+//%attributes = {"folder":"DevSync","lang":"en"}
+//This method saves the DevSync state back to disk.
 
-C_TEXT:C284($tJSONString)
+C_TEXT($tJSONString)
 
-$tJSONString:=JSON Stringify:C1217(Form:C1466.DevSyncObject;*)
-TEXT TO DOCUMENT:C1237(Form:C1466.path.DevSyncState;$tJSONString;"UTF-8")
+$tJSONString:=JSON Stringify(Form.DevSyncObject; *)
+TEXT TO DOCUMENT(Form.path.DevSyncState; $tJSONString; "UTF-8")

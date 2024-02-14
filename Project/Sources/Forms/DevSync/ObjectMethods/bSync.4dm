@@ -1,5 +1,5 @@
-If (DevSync_CanSync =True:C214)
+If (DevSync_CanSync=True)
 	
-	DevSync_Sync 
+	DevSync_Sync
 	
 End if 

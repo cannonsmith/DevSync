@@ -1,21 +1,21 @@
-C_LONGINT:C283($lIndex)
-C_TEXT:C284($tSelectedPath)
-C_OBJECT:C1216($oProject)
+C_LONGINT($lIndex)
+C_TEXT($tSelectedPath)
+C_OBJECT($oProject)
 
-If (Form:C1466.UI.ProjectCurrentItem#Null:C1517)
-	$tSelectedPath:=Form:C1466.UI.ProjectCurrentItem.path
+If (Form.UI.ProjectCurrentItem#Null)
+	$tSelectedPath:=Form.UI.ProjectCurrentItem.path
 	
-	  //Remove from the listbox UI
-	$lIndex:=Form:C1466.UI.ProjectCurrentPosition-1
-	Form:C1466.UI.Projects.remove($lIndex)
+	//Remove from the listbox UI
+	$lIndex:=Form.UI.ProjectCurrentPosition-1
+	Form.UI.Projects.remove($lIndex)
 	
-	  //Find and remove from the DevSync state object
-	$oProject:=Form:C1466.DevSyncObject.projectPaths.query("path = :1";$tSelectedPath)[0]
-	$lIndex:=Form:C1466.DevSyncObject.projectPaths.indexOf($oProject)
-	Form:C1466.DevSyncObject.projectPaths.remove($lIndex)
+	//Find and remove from the DevSync state object
+	$oProject:=Form.DevSyncObject.projectPaths.query("path = :1"; $tSelectedPath)[0]
+	$lIndex:=Form.DevSyncObject.projectPaths.indexOf($oProject)
+	Form.DevSyncObject.projectPaths.remove($lIndex)
 	
-	  //Also remove from any selections
-	For each ($oProject;Form:C1466.DevSyncObject.projectPaths)
+	//Also remove from any selections
+	For each ($oProject; Form.DevSyncObject.projectPaths)
 		
 		$lIndex:=$oProject.selectedProjects.indexOf($tSelectedPath)
 		If ($lIndex#-1)
@@ -24,8 +24,8 @@ If (Form:C1466.UI.ProjectCurrentItem#Null:C1517)
 		
 	End for each 
 	
-	  //Save to disk
-	DevSync_SaveState 
+	//Save to disk
+	DevSync_SaveState
 	
 	
 End if 
